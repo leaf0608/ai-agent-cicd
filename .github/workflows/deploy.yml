@@ -24,11 +24,12 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          # pyproject.toml에서 버전 추출
-          VERSION=$(grep '^version =' pyproject.toml | cut -d '"' -f 2)
+          # pyproject.toml에서 버전 추출 (없을 경우 0.1.0 사용)
+          VERSION=$(grep '^version =' pyproject.toml | cut -d '"' -f 2 || echo "0.1.0")
           COMMIT_HASH=$(git rev-parse --short HEAD)
-          # 과제 규칙에 맞는 이미지 명칭 설정 (재혁)
-          IMAGE_TAG="ghcr.io/${{ github.repository_owner }}/gangwon-재혁-backend:${VERSION}-${COMMIT_HASH}"
+          
+          # 이미지 이름에서 한글 '재혁'을 'jaehyuk'으로 수정
+          IMAGE_TAG="ghcr.io/${{ github.repository_owner }}/gangwon-jaehyuk-backend:${VERSION}-${COMMIT_HASH}"
           
           docker build -t $IMAGE_TAG .
           docker push $IMAGE_TAG
@@ -42,6 +43,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd infra/k8s/application
-            # 04-backend.yaml 파일 내의 이미지 태그를 새로 빌드된 것으로 자동 수정
-            sed -i "s|image: gangwon-재혁-backend.*|image: ${{ env.IMAGE_TAG }}|g" 04-backend.yaml
+            # sed 명령어가 찾을 패턴도 영문(jaehyuk)으로 수정
+            sed -i "s|image: .*gangwon-jaehyuk-backend.*|image: ${{ env.IMAGE_TAG }}|g" 04-backend.yaml
             kubectl apply -f .
