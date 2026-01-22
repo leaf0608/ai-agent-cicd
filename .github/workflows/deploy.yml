@@ -24,15 +24,18 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          # pyproject.toml에서 버전 추출 (없을 경우 0.1.0 사용)
+          # 1. pyproject.toml에서 버전 추출 (없을 경우 0.1.0 사용)
           VERSION=$(grep '^version =' pyproject.toml | cut -d '"' -f 2 || echo "0.1.0")
           COMMIT_HASH=$(git rev-parse --short HEAD)
           
-          # 이미지 이름에서 한글 '재혁'을 'jaehyuk'으로 수정
+          # 2. 이미지 이름 설정 (도커 표준에 따라 영문 'jaehyuk' 사용)
           IMAGE_TAG="ghcr.io/${{ github.repository_owner }}/gangwon-jaehyuk-backend:${VERSION}-${COMMIT_HASH}"
           
+          # 3. 도커 빌드 및 푸시
           docker build -t $IMAGE_TAG .
           docker push $IMAGE_TAG
+          
+          # 4. 다음 단계를 위해 환경변수 저장
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
       - name: Deploy on K8s via SSH
@@ -42,7 +45,12 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd infra/k8s/application
-            # sed 명령어가 찾을 패턴도 영문(jaehyuk)으로 수정
-            sed -i "s|image: .*gangwon-jaehyuk-backend.*|image: ${{ env.IMAGE_TAG }}|g" 04-backend.yaml
+            # 1. 서버 내 확인된 실제 경로로 이동
+            cd ~/2-3/실행코드/infra/k8s/application
+            
+            # 2. 서버의 04-backend.yaml에 적힌 기존 이미지를 새로 빌드한 이미지(jaehyuk)로 교체
+            # 기존 이미지명인 'gangwon-upstage-knu-30-backend'를 찾아 변경합니다.
+            sed -i "s|image: .*gangwon-upstage-knu-30-backend.*|image: ${{ env.IMAGE_TAG }}|g" 04-backend.yaml
+            
+            # 3. 변경된 설정을 쿠버네티스에 적용
             kubectl apply -f .
