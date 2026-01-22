@@ -1,0 +1,122 @@
+[
+  {
+    "office_name": "서울 본사",
+    "timezone": "Asia/Seoul",
+    "country": "South Korea",
+    "description": "서울 본사의 근무 시간은 09:00부터 18:00까지입니다. 점심시간은 12:00부터 13:00까지입니다. 한국의 공휴일은 휴무이며, 야근 시 사전에 승인이 필요합니다."
+  },
+  {
+    "office_name": "도쿄 지사",
+    "timezone": "Asia/Tokyo",
+    "country": "Japan",
+    "description": "도쿄 지사의 근무 시간은 09:00부터 18:00까지입니다. 점심시간은 12:00부터 13:00까지입니다. 고객 응대 업무가 많아 근무 시간 중 연락이 원활해야 하며, 골든위크 기간에는 단축 근무를 실시할 수 있습니다."
+  },
+  {
+    "office_name": "상하이 지사",
+    "timezone": "Asia/Shanghai",
+    "country": "China",
+    "description": "상하이 지사는 09:30에 업무를 시작하여 18:30에 마감합니다. 점심시간은 12:30부터 13:30까지입니다. 춘절 연휴 기간에는 장기 휴무를 가지므로 사전에 일정을 확인해야 합니다."
+  },
+  {
+    "office_name": "싱가포르 지사",
+    "timezone": "Asia/Singapore",
+    "country": "Singapore",
+    "description": "싱가포르 지사는 09:00부터 18:00까지 근무합니다. 점심시간은 12:00부터 13:00까지입니다. 다양한 문화권이 섞여 있어 주요 명절(Diwali, Hari Raya 등)에 유연하게 대처합니다."
+  },
+  {
+    "office_name": "두바이 지사",
+    "timezone": "Asia/Dubai",
+    "country": "United Arab Emirates",
+    "description": "두바이 지사의 근무 시간은 08:00부터 17:00까지입니다. 점심시간은 13:00부터 14:00까지입니다. 금요일 오후는 종교 활동을 위해 12:00에 업무를 조기 마감하며, 라마단 기간에는 단축 근무(09:00~15:00)를 시행합니다."
+  },
+  {
+    "office_name": "런던 지사",
+    "timezone": "Europe/London",
+    "country": "United Kingdom",
+    "description": "런던 지사의 근무 시간은 09:00부터 17:30까지입니다. 점심시간은 13:00부터 14:00까지입니다. 매주 금요일은 'Happy Hour' 문화로 인해 긴급한 회의가 아닌 경우 16:00 이후에는 연락을 자제하는 것이 좋습니다."
+  },
+  {
+    "office_name": "파리 지사",
+    "timezone": "Europe/Paris",
+    "country": "France",
+    "description": "파리 지사는 09:30부터 18:00까지 근무합니다. 점심시간은 12:30부터 14:00까지로 1시간 30분 동안 여유롭게 식사하는 문화가 있습니다. 8월은 여름 휴가 시즌으로 최소 인원만 근무합니다."
+  },
+  {
+    "office_name": "베를린 지사",
+    "timezone": "Europe/Berlin",
+    "country": "Germany",
+    "description": "베를린 지사의 근무 시간은 09:00부터 17:00까지입니다. 점심시간은 12:00부터 12:30까지로 짧은 편입니다. 업무 집중도가 매우 높아 근무 시간 외 연락은 긴급 상황이 아니면 받지 않습니다."
+  },
+  {
+    "office_name": "모스크바 지사",
+    "timezone": "Europe/Moscow",
+    "country": "Russia",
+    "description": "모스크바 지사는 10:00에 업무를 시작하여 19:00에 마감합니다. 점심시간은 13:00부터 14:00까지입니다. 겨울철에는 날씨 영향으로 재택근무가 잦습니다."
+  },
+  {
+    "office_name": "뉴욕 지사",
+    "timezone": "America/New_York",
+    "country": "USA",
+    "description": "뉴욕 지사의 근무 시간은 09:00부터 17:00까지입니다. 점심시간은 12:00부터 13:00까지입니다. 금융 및 비즈니스 중심지로 업무 속도가 매우 빠르며, 이메일 회신은 1시간 이내를 원칙으로 합니다."
+  },
+  {
+    "office_name": "시카고 지사",
+    "timezone": "America/Chicago",
+    "country": "USA",
+    "description": "시카고 지사는 08:30부터 17:00까지 근무합니다. 점심시간은 12:00부터 13:00까지입니다. 중부 표준시(CST)를 따르며 뉴욕보다 1시간 늦습니다."
+  },
+  {
+    "office_name": "로스앤젤레스 지사",
+    "timezone": "America/Los_Angeles",
+    "country": "USA",
+    "description": "LA 지사는 IT 및 엔터테인먼트 업무 위주로, 10:00부터 19:00까지 유연하게 근무합니다. 점심시간은 13:00부터 14:00까지입니다. 자유로운 분위기지만 프로젝트 마감 기한은 엄격히 준수합니다."
+  },
+  {
+    "office_name": "밴쿠버 지사",
+    "timezone": "America/Vancouver",
+    "country": "Canada",
+    "description": "밴쿠버 지사의 근무 시간은 09:00부터 17:00까지입니다. 점심시간은 12:00부터 13:00까지입니다. 자연 친화적인 문화로 금요일 오후에는 팀 빌딩 활동을 자주 진행합니다."
+  },
+  {
+    "office_name": "상파울루 지사",
+    "timezone": "America/Sao_Paulo",
+    "country": "Brazil",
+    "description": "상파울루 지사는 09:00부터 18:00까지 근무합니다. 점심시간은 12:00부터 13:30까지입니다. 카니발 축제 기간에는 일주일 정도 업무가 중단되거나 지연될 수 있습니다."
+  },
+  {
+    "office_name": "시드니 지사",
+    "timezone": "Australia/Sydney",
+    "country": "Australia",
+    "description": "시드니 지사는 08:30부터 17:00까지 근무합니다. 점심시간은 12:30부터 13:30까지입니다. '워라밸'을 중시하여 정시 퇴근 문화가 강하며, 크리스마스 시즌인 여름에는 장기 휴가를 많이 갑니다."
+  },
+  {
+    "office_name": "오클랜드 지사",
+    "timezone": "Pacific/Auckland",
+    "country": "New Zealand",
+    "description": "오클랜드 지사의 근무 시간은 08:30부터 17:00까지입니다. 점심시간은 12:00부터 13:00까지입니다. 세계에서 가장 먼저 하루를 시작하는 지사 중 하나입니다."
+  },
+  {
+    "office_name": "뭄바이 지사",
+    "timezone": "Asia/Kolkata",
+    "country": "India",
+    "description": "뭄바이 지사는 10:00부터 19:00까지 근무합니다. 점심시간은 13:30부터 14:30까지입니다. 시차는 한국보다 3시간 30분 늦습니다. IT 개발팀이 주축이며 늦은 시간까지 커뮤니케이션이 가능할 때가 많습니다."
+  },
+  {
+    "office_name": "방콕 지사",
+    "timezone": "Asia/Bangkok",
+    "country": "Thailand",
+    "description": "방콕 지사의 근무 시간은 09:00부터 18:00까지입니다. 점심시간은 12:00부터 13:00까지입니다. 송크란 축제 기간(4월)에는 업무 응답이 지연될 수 있습니다."
+  },
+  {
+    "office_name": "요하네스버그 지사",
+    "timezone": "Africa/Johannesburg",
+    "country": "South Africa",
+    "description": "요하네스버그 지사는 08:00부터 16:30까지 근무합니다. 점심시간은 13:00부터 14:00까지입니다. 유럽 시간대와 비슷하게 운영되며 보안 문제로 늦은 시간 근무는 지양합니다."
+  },
+  {
+    "office_name": "하와이 지사",
+    "timezone": "Pacific/Honolulu",
+    "country": "USA",
+    "description": "하와이 지사는 08:00부터 16:00까지 근무합니다. 점심시간은 12:00부터 13:00까지입니다. 시차가 커서(한국보다 19시간 늦음) 본사와 실시간 회의를 잡으려면 한국 시간 오전 시간이 적합합니다."
+  }
+]

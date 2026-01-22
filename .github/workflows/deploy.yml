@@ -1,0 +1,47 @@
+name: Deploy to K8s (GHCR)
+
+on:
+  push:
+    branches: ["deploy/version"] # 이 브랜치에 코드를 푸시할 때만 실행됩니다.
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        run: |
+          # pyproject.toml에서 버전 추출
+          VERSION=$(grep '^version =' pyproject.toml | cut -d '"' -f 2)
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          # 과제 규칙에 맞는 이미지 명칭 설정 (재혁)
+          IMAGE_TAG="ghcr.io/${{ github.repository_owner }}/gangwon-재혁-backend:${VERSION}-${COMMIT_HASH}"
+          
+          docker build -t $IMAGE_TAG .
+          docker push $IMAGE_TAG
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+
+      - name: Deploy on K8s via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd infra/k8s/application
+            # 04-backend.yaml 파일 내의 이미지 태그를 새로 빌드된 것으로 자동 수정
+            sed -i "s|image: gangwon-재혁-backend.*|image: ${{ env.IMAGE_TAG }}|g" 04-backend.yaml
+            kubectl apply -f .
